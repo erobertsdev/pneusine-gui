@@ -8,11 +8,6 @@ from scipy.optimize import newton_krylov
 root = Tk()
 root.title("renner-solve-qp4")
 
-# Creates a label widget
-# myLabel = Label(root, text="Hello World!")
-# myLabel2 = Label(root, text="My name is Elias Roberts")
-# myLabel3 = Label(root, text="Boop")
-
 # Entries
 per_label = Label(root, text="per")
 per_label.grid(row=0, column=0)
@@ -68,9 +63,8 @@ def QPphase(per, ri, del_qp, PH_qp1):
     T = 1/del_qp/(2*pi*ri/10000*abs(eta*K_1_ri/K_0_ri))/1e6
     #del_qp = P/Q MPa(m^3/s)
     # amplitude from q 1*pi*T*ri/10000*
-    result_text = str(per, " ", D_sol, " ",  T, " ", T/D_sol)
-    output.labelText = result_text
-    # print(per, " ", D_sol, " ",  T, " ", T/D_sol )
+
+    print(per, " ", D_sol, " ",  T, " ", T/D_sol )
     return func(0.1)
 
 
