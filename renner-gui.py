@@ -59,7 +59,7 @@ def QPphase(per, ri, del_qp, PH_qp1):
     # amplitude from q 1*pi*T*ri/10000*
 
     print(per, " | ", D_sol, " | ",  T, " | ", T/D_sol )
-    output["text"]= f"{per} {D_sol} {T} {T/D_sol}"
+    output["text"]= f"{per} | {D_sol} | {T} | {T/D_sol}"
     return func(0.1)
 
 # exit button
