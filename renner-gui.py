@@ -30,16 +30,10 @@ PH_qp1 = Entry(root, width=50, bg="#303030", fg="white", borderwidth=1)
 PH_qp1.grid(row=3, column=1)
 
 output = Label(root, text="")
-
-# def getValues():
-#     per_value = per.get()
-#     ri_value = ri.get()
-#     del_qp_value = del_qp.get()
-#     PH_qp1_value = PH_qp1.get()
-#     QPphase(per_value, ri_value, del_qp_value, PH_qp1_value)
+output.grid(row=0, column=2)
 
 run_button = Button(root, text="Run", padx=50, pady=10, command=lambda: QPphase(float(per.get()), float(ri.get()), float(del_qp.get()), float(PH_qp1.get())))
-run_button.grid(row=4, column=0, columnspan=2)
+run_button.grid(row=4, column=1, columnspan=2)
 
 # e.insert(0, "Enter your name: ") # default text for input field
 
@@ -64,19 +58,12 @@ def QPphase(per, ri, del_qp, PH_qp1):
     #del_qp = P/Q MPa(m^3/s)
     # amplitude from q 1*pi*T*ri/10000*
 
-    print(per, " ", D_sol, " ",  T, " ", T/D_sol )
+    print(per, " | ", D_sol, " | ",  T, " | ", T/D_sol )
+    output["text"]= f"{per} {D_sol} {T} {T/D_sol}"
     return func(0.1)
 
-
-# exit_button = Button(root, text="Exit", padx=20, pady=20, command=root.quit, fg="white", bg="#303030") # pad changes size of button
-# exit_button.grid(row=5, column=0, columnspan=2)
-
-
-# Put the label on the screen
-# Grid system
-# myLabel.grid(row=0, column=0)
-# myLabel2.grid(row=1, column=1)
-
-
+# exit button
+exit_button = Button(root, text="Exit", padx=30, pady=10, command=root.quit)
+exit_button.grid(row=5, column=2, columnspan=1)
 
 root.mainloop()
